@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+encoding//src/com/whaley/exception/SSHExecption.py=utf-8
+encoding//src/com/whaley/framwork/DBConfig.py=utf-8
+encoding//src/com/whaley/framwork/DBUtils.py=utf-8
+encoding//src/com/whaley/framwork/DefaultLogger.py=utf-8
+encoding//src/com/whaley/framwork/ExeclUtils.py=utf-8
+encoding//src/com/whaley/framwork/FileUtils.py=utf-8
+encoding//src/com/whaley/framwork/HttpUtils.py=utf-8
+encoding//src/com/whaley/framwork/SSHUtils.py=utf-8
+encoding//src/com/whaley/test/datetimetest.py=utf-8
+encoding//src/test.py=utf-8
