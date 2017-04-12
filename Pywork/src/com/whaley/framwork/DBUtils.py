@@ -45,29 +45,37 @@ class DBUtils():
          
         
    
+    def add_batch_datas(self,sql,datas):
+        cursor= self.conn.cursor()
+        res = cursor.executemany(sql,datas)
+        self.conn.commit()
+        self.close()
+        return res
+        
+   
    
     def query_record_dict(self,sql):
         cursor = self.conn.cursor(cursorclass=MySQLdb.cursors.DictCursor)
         res = cursor.execute(sql)
         if(res !=0):
             datas = cursor.fetchall()
-            self.logger.info("datas type:%s" %type(datas))
+            #self.logger.info("datas type:%s" %type(datas))
             #print "datas type:%s" %type(datas)
             for row in datas:#row type is dict
-                self.logger.info(row)
-                print "\n"
-                print "position_code:%s" %row['position_code'],
-                print "position_name:%s" %row['position_name'],
-                print "position_name_en:%s" %row['position_name_en'],
-                print "status:%d" %row['status'],
-                print "create_user:%s" %row['create_user'],
-                print "create_date:%s" %row['create_date'],    
-                print "\n"
-                
-               
-            
+                pass
+                #self.logger.info(row)
+#                print "\n"
+#                print "position_code:%s" %row['position_code'],
+#                print "position_name:%s" %row['position_name'],
+#                print "position_name_en:%s" %row['position_name_en'],
+#                print "status:%d" %row['status'],
+#                print "create_user:%s" %row['create_user'],
+#                print "create_date:%s" %row['create_date'],    
+#                print "\n"
+    
         else:
             print "no data found!"
+        return datas
        
     def heart_beat_test(self):
         return self.qeuey_record("select version()")
